@@ -1,0 +1,348 @@
+
+@font-face {
+    font-family: 'h2d2';
+    src: url('./fonts/h2d2.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('./fonts/h2d2.ttf') format('truetype');
+}
+
+/*Roboto*/
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Roboto Thin'), local('Roboto-Thin'), url(fonts/Roboto-Thin.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(fonts/Roboto-Light.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Regular'), local('Roboto-Regular'), url(fonts/Roboto-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(fonts/Roboto-Medium.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(fonts/Roboto-Bold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Roboto Black'), local('Roboto-Black'), url(fonts/Roboto-Black.ttf) format('truetype');
+}
+
+@media screen and (max-device-width : 500px)
+{
+  body {
+    font-size:15px;
+  }
+}
+
+@media screen and (max-device-width : 1024px)
+{
+  body {
+    font-size:30px;
+  }
+}
+
+@media screen and (max-device-width : 1024px) and (orientation: landscape) {
+  body {
+    font-size:18px;
+  }
+}
+
+::selection {
+  background: rgba(200, 200, 200, 0.3);
+}
+::-moz-selection {
+  background: rgba(200, 200, 200, 0.3);
+}
+
+html {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+	min-height: 100%;
+	background: #000;
+	text-shadow: 0 0 0.5em #000;
+
+}
+#background {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	border: 0;
+	margin: 0;
+	left: 0;
+	top: 0;
+	/*filter:blur(2px);*/
+	box-shadow:  inset 0 0 5em #000;
+	-moz-box-shadow:  inset 0 0 10em #000;
+	-webkit-box-shadow:  inset 0 0 10em #000;
+}
+#main {
+	margin: auto;
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+a {
+	color: #ddd;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+button:focus {
+	outline:0;
+	opacity: 1.0;	
+}
+
+.jp-volume-controls button, .jp-controls button {
+	opacity: 0.9;
+}
+
+.jp-volume-controls button:hover {
+	opacity: 1.0;
+	color: #fff;
+	filter: drop-shadow( 0 0 0.1em #999 );
+}
+.jp-controls button:hover {
+	opacity: 1.0;
+	filter: drop-shadow( 0 0 0.05em #999 );
+}
+
+a:hover {
+	color: #fff;
+}
+h1 {
+	font-family: 'h2d2';
+	font-size: 450%;
+	padding: 0;
+	display: inline-block;
+	cursor: default;
+}
+
+#note, #contact {
+	font-style: italic;
+	font-size: 70%;
+	position: absolute;
+	bottom: 1em;
+}
+#note {
+	left: 1em;
+}
+#contact {
+	right: 1em;
+}
+
+#note a {
+	display: inline-block;
+	padding-right: 1em;
+}
+
+#note a:hover {
+	text-shadow: 0 0 0.5em #999;
+}
+
+#note a img, #contact a img {
+	-webkit-filter: drop-shadow( 0 0 0.5em #000 ); 
+	filter: drop-shadow( 0 0 0.5em #000 );
+	opacity: 0.9;
+}
+
+#note a:hover img, #contact a:hover img {
+	-webkit-filter: drop-shadow( 0 0 0.5em #999 ); 
+	filter: drop-shadow( 0 0 0.5em #999 );
+	opacity: 1.0;
+}
+
+/* contrôle du volume */
+.jp-volume-controls {
+	width: 100%;
+	height: 5em;
+	clear: both;
+	padding-top: 1em;
+}
+.jp-volume-controls button {
+	overflow: hidden;
+	text-indent: -9999px;
+	width: 0.9em;
+	height: 0.8em;
+	margin-bottom: 0.2em;
+}
+
+.jp-volume-controls .jp-mute {
+	float: left;
+	clear: both;
+	background: url("images/mute.svg") no-repeat center;
+	background-size: cover;
+}
+.jp-volume-controls .jp-volume-max {
+	float: right;
+	background: url("images/volume-max.svg") no-repeat center;
+	background-size: cover;
+}
+.jp-volume-controls .jp-unmute  {
+	float: left;
+	background: url("images/mute.svg")  no-repeat center;
+	opacity: 0.3;
+	background-size: cover;
+	display: none;
+}
+
+.jp-volume-controls button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: #fff;
+	font-size: 400%;
+	-webkit-filter: drop-shadow( 0 0.1em #000 ); 
+	filter: drop-shadow( 0 0 0.1em #000 );
+}
+.jp-volume-controls .jp-volume-bar {
+	width: 100%;
+	clear: both;
+	margin-top: 1em;
+	background: rgba(200, 200, 200, 0.7);
+	box-shadow:  0 0 1em #000;
+	border-radius: 0.1em;
+}
+
+.jp-volume-controls .jp-volume-bar:hover {
+	background: rgba(250, 250, 250, 0.8);
+	box-shadow:  0 0 1em #999;
+}
+
+.jp-volume-controls .jp-volume-bar-value {
+	background: #fff;
+	height: 1.2em;
+	border-radius: 0.1em;
+	box-shadow:  0 0 1em #000;
+	-moz-box-shadow:  0 0 1em #000;
+	-webkit-box-shadow: 0 0 1em #000;
+	opacity: 0.9;
+}
+
+.jp-volume-controls .jp-volume-bar-value:hover {
+	opacity: 1.0;
+	box-shadow:  0 0 1em #999;
+	-moz-box-shadow:  0 0 1em #999;
+	-webkit-box-shadow: 0 0 1em #999;
+	cursor: pointer; 
+}
+
+.jp-state-no-volume .jp-volume-controls {
+	display: none;
+}
+
+/* contrôle du bitrate */
+#hd-selector {
+	margin-top: -3.4em;
+	margin-bottom: 3.4em;
+	text-align: right;
+}
+#hd-selector:hover {
+	text-shadow: 0 0 1em #fff;
+}
+
+#hd-selector span {
+	font-weight: bold;
+	opacity: 0.7;
+	cursor: default;
+}
+
+#hd-selector:hover span {
+	opacity: 0.8;
+}
+
+#hd-selector span.active {
+	opacity: 1.0;
+}
+
+
+/* contrôle du lecteur */
+.jp-controls {
+	font-size: 300%;
+	width: 3em;
+	margin: auto;
+	height: 1.2em;
+}
+.jp-controls button {
+	font-size: 100%;
+	background: none;
+	border: none;
+	cursor: pointer;
+	margin: 0 auto;
+	display: block;
+	width: 1em;
+	overflow: hidden;
+	text-indent: -9999px;
+	-webkit-filter: drop-shadow( 0 0.05em #000 ); 
+	filter: drop-shadow( 0 0 0.05em #000 );
+}
+.jp-controls button.jp-play {
+	background: url("images/play.svg")  no-repeat center;
+	background-size: cover;
+}
+.jp-controls button.jp-pause {
+	background: url("images/pause.svg")  no-repeat center;
+	background-size: cover;
+	display: none;
+}
+
+/* hide elements in case of no javascript */
+.jp-controls, .jp-volume-controls {
+	display: none;
+}
+
+#nojs {
+	width: 25em;
+	margin: auto;
+}
+
+/* titre en cours */
+.jp-title {
+	width: 25em;
+	margin: auto;
+	text-align: center;
+	color: #fff;
+	overflow: hidden;
+	height: 3.5em;
+	margin-top: 1em;
+	padding: 0;
+	cursor: default;
+	
+}
+
+.jp-title p {
+		display: block;
+		padding: 0;
+		margin: 0;
+}
+
+
+ /** pour les tooltips */
+ 
+ .ui-tooltip {
+	 box-shadow: none;
+	 text-shadow: none;
+ }

@@ -1,0 +1,11 @@
+
+.img {
+	float: left;
+	margin: 1em;
+}
+.img img {
+		height: 10em;
+}
+h2 {
+		clear: left;
+}
