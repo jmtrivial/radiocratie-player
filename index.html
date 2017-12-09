@@ -18,31 +18,54 @@
 		<meta name="Description" content="Radiocratie, une webradio pour les contrôler toutes" />
 	</head>
 	<body>
-		<div id="background"></div>
-		<div id="main">
-			<img src="images/illustration.jpg" style="display: none" />
-			<h1 title="Une webradio pour les contrôler toutes">Radiocratie</h1>
-			<div id="hd-selector"><span class="hd">HD</span> <input type="checkbox" id="rc-checkbox" /></div>
-			<div id="jquery_jplayer"></div>
-			<div id="nojs">Le lecteur intégré de notre webradio nécessite l'activation du javascript. Si vous ne souhaitez pas activer javascript, vous pouvez également écouter directement le flux, en qualité <a href="http://flux.radiocratie.com/flux">192 kbps</a>, ou en qualité <a href="http://flux.radiocratie.com/flux-128">128 kbps</a>.</div>
-			<div id="jp_container">
-				<div class="jp-controls">
-					<button class="jp-play" href="#" title="lecture">lecture</button>
-					<button class="jp-pause" href="#" title="pause">pause</button>
-				</div>	
-				<div class="jp-title" title="titre en cours"></div>
-				<div class="jp-volume-controls">
-				        <button class="jp-mute" role="button" tabindex="0" title="muet">muet</button>
-				        <button class="jp-unmute" role="button" tabindex="0" title="écouter">écouter</button>
-			        	<button class="jp-volume-max" role="button" tabindex="1" title="plein volume">plein volume</button>
-				        <div class="jp-volume-bar" title="ajuster le volume">
-				          <div class="jp-volume-bar-value"></div>
-				        </div>
-				</div>
-			</div>
-		</div>
-		<p id="note"><a title="À écouter aussi dans votre lecteur en 192kbps, pour les bonnes connexions internet." href="http://flux.radiocratie.com/flux"><img src="images/streaming.svg" style="width: 1.5em; vertical-align: middle" /> 192k</a> <a title="À écouter aussi dans votre lecteur en 128kbps, pour les connexions internet un peu lentes" href="http://flux.radiocratie.com/flux-128"><img src="images/streaming.svg" style="width: 1.5em; vertical-align: middle" /> 128k</a></p>
-		<p id="contact"><a href="mailto:contact@radiocratie.com" title="nous écrire"><img src="images/email.svg" style="width: 1.5em; vertical-align: middle" /></a></p>
+    <div id="container">
+      <div id="background"></div>
+      <div id="main">
+        <img src="images/illustration.jpg" style="display: none" />
+        <h1 title="Une webradio pour les contrôler toutes">Radiocratie</h1>
+        <div id="hd-selector"><span class="hd">HD</span> <input type="checkbox" id="rc-checkbox" /></div>
+        <div id="jquery_jplayer"></div>
+        <div id="nojs">Le lecteur intégré de notre webradio nécessite l'activation du javascript. Si vous ne souhaitez pas activer javascript, vous pouvez également écouter directement le flux, en qualité <a href="http://flux.radiocratie.com/flux">192 kbps</a>, ou en qualité <a href="http://flux.radiocratie.com/flux-128">128 kbps</a>.</div>
+        <div id="jp_container">
+          <div class="jp-controls">
+            <button class="jp-play" href="#" title="lecture">lecture</button>
+            <button class="jp-pause" href="#" title="pause">pause</button>
+          </div>	
+          <div class="jp-title" title="titre en cours"></div>
+          <div class="jp-volume-controls">
+                  <button class="jp-mute" role="button" tabindex="0" title="muet">muet</button>
+                  <button class="jp-unmute" role="button" tabindex="0" title="écouter">écouter</button>
+                  <button class="jp-volume-max" role="button" tabindex="1" title="plein volume">plein volume</button>
+                  <div class="jp-volume-bar" title="ajuster le volume">
+                    <div class="jp-volume-bar-value"></div>
+                  </div>
+          </div>
+        </div>
+      </div>
+      <div id="side-note-button">
+        <button title="Informations">+</button>
+      </div>
+      <div id="side-note">
+        <div>
+          <h2>Note d'intension des programmateurs</h2>
+          <p>La programmation musicale de <strong>Radiocratie</strong> se veut à l'image de ce qu'écoutent ses programmateurs&nbsp;: naviguant entre 
+          les douceurs des titres qui ne peuvent pas être oubliés, les pièces posées là pour surprendre, et les sons qui dérangent...
+          </p>
+          <p>
+            Sauf émission spéciale, la journée sur <strong>Radiocratie</strong> commence entre à 8h, avec une programmation musicale que même Claire et 
+            Sylvain Blanchard peuvent écouter. À 18h, Claire et Sylvain se préparent pour une soirée festive. Au programme&nbsp;: de la musique pour les mettre
+            en transe&nbsp;! Mais passé 2h du mat', chut, Claire et Sylvain dorment. Ne leur parlez pas de ce qui passe sur Radiocratie&nbsp;!
+          </p>
+          <p>Pendant chaque partie de la journée, les sons ne sont pas choisis en fonction de leur style musical, mais plutôt par énergie&nbsp;: tranquille, normal, énervé... 
+          Sauf si on s'est lourdement trompés, les oreilles de Claire et Sylvain Blanchard naviguent au fil de nos humeurs, progressivement entre toutes les ambiances du spectre.</p>
+          <h2>Tu veux participer&nbsp;?</h2>
+          <p>Tu veux participer&nbsp;? Pour l'instant, l'équipe de <strong>Radiocratie</strong> trouve sa vitesse de croisière. Mais si tu as des pièces
+          à lui proposer, n'hésites pas <a href="mailto:contact@radiocratie.com" title="nous écrire">à lui écrire</a>.</p>
+        </div>
+      </div>
+      <p id="note"><a title="À écouter aussi dans votre lecteur en 192kbps, pour les bonnes connexions internet." href="http://flux.radiocratie.com/flux"><img src="images/streaming.svg" style="width: 1.5em; vertical-align: middle" /> 192k</a> <a title="À écouter aussi dans votre lecteur en 128kbps, pour les connexions internet un peu lentes" href="http://flux.radiocratie.com/flux-128"><img src="images/streaming.svg" style="width: 1.5em; vertical-align: middle" /> 128k</a></p>
+      <p id="contact"><a href="mailto:contact@radiocratie.com" title="nous écrire"><img src="images/email.svg" style="width: 1.5em; vertical-align: middle" /></a></p>
+    </div>
 	</body>
 
 </html>
