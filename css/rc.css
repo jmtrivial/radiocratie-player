@@ -405,10 +405,14 @@ h1 {
   display: inline block;
   width: auto;
     transition: right 0.25s;
- }
+  background-color: rgba(0, 0, 0, 0.8); 
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
   #side-note-button.visible {
     right: 25%;
     transition: right 0.25s;
+    padding: 0 0.5em;
   }
   
 @media screen and (max-width : 1280px) {
