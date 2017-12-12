@@ -16,7 +16,7 @@ var images = { "nuit" : [ "images/bg/mix-chant.jpg", "images/bg/k7s.jpg", "image
                "images/bg/Brest bateau.jpg",
                "images/bg/DSC04547.jpg",
                "images/bg/DSC07154.jpg",
-               "images/bg/DSC07162.jpg"
+               "images/bg/DSC07162.jpg",
                "images/bg/DSC07180.jpg",
                "images/bg/IMG_0108.jpg",
                "images/bg/IMG_0110.jpg",
