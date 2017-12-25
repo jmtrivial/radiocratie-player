@@ -1,4 +1,32 @@
-			   
+
+
+function simplifyDateTime(datetime) {
+    time = datetime.split(" ")[1];
+    basictime = time.split(".")[0];
+    return basictime;
+}
+
+function preparePopup() {
+  
+  $( "#dialog" ).dialog({
+      autoOpen: false,
+      show: {
+        effect: "drop",
+        direction: "up",
+        duration: 200
+      },
+      hide: {
+        effect: "drop",
+        direction: "up",
+        duration: 200
+      },
+      width: 'auto'
+    });
+ 
+    $( ".jp-title" ).on( "click", function() {
+      $( "#dialog" ).dialog( "open" );
+    });
+}
 			   
 			   
 function cleanName(showname) {
@@ -51,8 +79,23 @@ function updateBackground() {
 }
 
 function updateTitle() {
+  /** le titre affiché */
 	$(".jp-title").html("<p>" + window.currenttrack + "</p>");
 	$(".jp-title").tooltip({destroy: true});
+  
+  /** les titres du popup */
+  content = "<table><tr><th>Début</th><th>Fin</th><th>Titre - Artiste</th></tr>";
+  if (window.previoustrack2) {
+      content += "<tr><td>" + window.previoustrack2starts + "</td><td>" + window.previoustrack2ends + "</td><td>" + window.previoustrack2 + "</td></tr>";    
+  }
+  if (window.previoustrack) {
+      content += "<tr><td>" + window.previoustrackstarts + "</td><td>" + window.previoustrackends + "</td><td>" + window.previoustrack + "</td></tr>";    
+  }
+  if (window.currenttrack) {
+      content += "<tr class=\"encours\"><td>" + window.currenttrackstarts + "</td><td>" + window.currenttrackends + "</td><td>" + window.currenttrack + "</td></tr>";    
+  }
+  content += "</table>";
+  $("#dialog").html(content);
 }
 
 
@@ -69,7 +112,21 @@ function loadInfos() {
 			nexttracktime = Date.parse(data.next.starts) + shift; 
 			nextshowtime = Date.parse(data.nextShow[0].starts);
 
+
+      if (window.previoustrack && data.previous.name != window.previoustrack) {
+        window.previoustrack2 = window.previoustrack;
+        window.previoustrack2starts = window.previoustrackstarts;
+        window.previoustrack2ends = window.previoustrackends;
+      }
+      
+      window.previoustrack = data.previous.name;
+      window.previoustrackstarts = simplifyDateTime(data.previous.starts);
+      window.previoustrackends = simplifyDateTime(data.previous.ends);
+      
 			window.currenttrack = data.current.name;
+      window.currenttrackstarts = simplifyDateTime(data.current.starts);
+      window.currenttrackends = simplifyDateTime(data.current.ends);
+      
 			window.currentshow = data.currentShow[0].name;
 			window.endofcurrenttrack = Date.now() + (nexttracktime - currenttime);
 
@@ -126,6 +183,9 @@ window.mobilecheck = function() {
 
 $(document).ready(function(){
 	
+  
+  
+  preparePopup();
   if (!window.mobilecheck()) {
     $( document ).tooltip({ show: {delay: 700}});
   }
