@@ -85,14 +85,14 @@ function updateTitle() {
   
   /** les titres du popup */
   content = "<table><tr><th>Début</th><th>Fin</th><th>Titre - Artiste</th></tr>";
-  if (window.previoustrack2) {
-      content += "<tr><td>" + window.previoustrack2starts + "</td><td>" + window.previoustrack2ends + "</td><td>" + window.previoustrack2 + "</td></tr>";    
-  }
-  if (window.previoustrack) {
-      content += "<tr><td>" + window.previoustrackstarts + "</td><td>" + window.previoustrackends + "</td><td>" + window.previoustrack + "</td></tr>";    
-  }
   if (window.currenttrack) {
       content += "<tr class=\"encours\"><td>" + window.currenttrackstarts + "</td><td>" + window.currenttrackends + "</td><td>" + window.currenttrack + "</td></tr>";    
+  }
+  if (window.previoustrack) {
+      content += "<tr class=\"prev\"><td>" + window.previoustrackstarts + "</td><td>" + window.previoustrackends + "</td><td>" + window.previoustrack + "</td></tr>";    
+  }
+  if (window.previoustrack2) {
+      content += "<tr class=\"prev2\"><td>" + window.previoustrack2starts + "</td><td>" + window.previoustrack2ends + "</td><td>" + window.previoustrack2 + "</td></tr>";    
   }
   content += "</table>";
   $("#dialog").html(content);

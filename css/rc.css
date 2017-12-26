@@ -474,5 +474,8 @@ h1 {
 }
 
 .encours {
+    font-weight: bold;
+}
+.prev2 {
     color: #aaa;
 }
