@@ -1,4 +1,12 @@
 
+function updatePageTitle() {
+  msg = "Radiocratie";
+  if (window.playStatus) {
+      msg += " ♪ " + window.currenttrack;
+  }
+  window.document.title = msg;
+}
+
 function updateUrl(playing) {
 	window.localupdate = true;
 	if (window.bitrate != null) {
@@ -69,11 +77,13 @@ $(document).ready(function(){
 		play: function() {
 				window.playStatus = true;
 				updateUrl(true);
+        updatePageTitle();
 		},
 		pause: function() {
 			$(this).jPlayer("clearMedia");
 			window.playStatus = false;
 			updateUrl(false);
+      updatePageTitle();
 		},
 		error: function(event) {
 			if(ready && event.jPlayer.error.type === $.jPlayer.error.URL_NOT_SET) {

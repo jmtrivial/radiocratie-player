@@ -1,5 +1,13 @@
 
 
+function updatePageTitle() {
+  msg = "Radiocratie";
+  if (window.playStatus) {
+      msg += " ♪ " + window.currenttrack;
+  }
+  window.document.title = msg;
+}
+
 function simplifyDateTime(datetime) {
     time = datetime.split(" ")[1];
     basictime = time.split(".")[0];
@@ -131,6 +139,7 @@ function loadInfos() {
 			window.endofcurrenttrack = Date.now() + (nexttracktime - currenttime);
 
 			updateTitle();
+      updatePageTitle();
 			
 			setTimeout("loadInfos()", nexttracktime - currenttime);
 			
