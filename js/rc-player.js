@@ -137,3 +137,22 @@ $(document).ready(function(){
 
 	
 });
+
+ $(document).keypress(function(evt) {
+	var keyCode = 0; 
+        if (evt)  { 
+        	keyCode = evt.keyCode || evt.which; 
+        } 
+        else { 
+              // For IE 
+              keyCode = window.event.keyCode; 
+        }
+	switch (keyCode) { 
+		case 32:
+			if (!window.playStatus)
+				$("#jquery_jplayer").jPlayer("play");
+			else
+				$("#jquery_jplayer").jPlayer("pause");	
+	};
+});
+
