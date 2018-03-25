@@ -3,7 +3,10 @@
 function updatePageTitle() {
   msg = "Radiocratie";
   if (window.playStatus) {
-      msg = window.currenttrack + " ♪ " + msg;
+      msg = window.currenttrack.replace("&amp;", "&") + " ♪ " + msg + " 📾";
+  }
+  else {
+      msg = "📾 " + msg;
   }
   window.document.title = msg;
 }
