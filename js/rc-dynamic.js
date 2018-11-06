@@ -37,6 +37,32 @@ function preparePopup() {
     $( ".jp-title" ).on( "click", function() {
       $( "#dialog" ).dialog( "open" );
     });
+
+  $("#news").dialog({
+	autoOpen: true,
+      show: {
+        effect: "drop",
+        direction: "up",
+        duration: 200
+      },
+      hide: {
+        effect: "drop",
+        direction: "up",
+        duration: 200
+      },
+      width: 'auto',
+     buttons: {
+     Ok: function() {
+          $( this ).dialog( "close" );
+     }},
+	position: { 
+            my: 'center top',
+            at: 'center top',
+            of: $('#container')
+        },
+	dialogClass: "no-titlebar",
+
+});
 }
 			   
 			   

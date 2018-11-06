@@ -360,6 +360,14 @@ h1 {
 	 text-shadow: none;
  }
 
+.ui-dialog .ui-dialog-buttonpane {
+	border: 0;
+}
+
+.no-titlebar .ui-dialog-titlebar {
+  display: none;
+}
+
  
  /** pour la sidebar */
  
