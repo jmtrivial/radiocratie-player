@@ -22,7 +22,10 @@ var images = { "nuit" : [ "images/bg/mix-chant.jpg", "images/bg/k7s.jpg", "image
                "images/bg/IMG_0110.jpg",
                "images/bg/IMG_0133.jpg",
                "images/bg/IMG_0325.jpg",
-               "images/bg/IMG_2245.jpg"
+               "images/bg/IMG_2245.jpg",
+               "images/bg/DSCF0093.JPG",
+               "images/bg/DSCF0237.JPG",
+               "images/bg/DSCF0249.JPG"
    						],
 			   "soiree" : [ "images/bg/dj-mix.jpg", "images/bg/goa.jpg", 
 							"images/bg/frequence.jpg", "images/bg/blaukauss.jpg", 
@@ -33,6 +36,7 @@ var images = { "nuit" : [ "images/bg/mix-chant.jpg", "images/bg/k7s.jpg", "image
               "images/bg/DSC06778.jpg",
               "images/bg/IMG_2277.jpg",
               "images/bg/IMG_2280.jpg",
-              "images/bg/Place de Jaude.jpg"
+              "images/bg/Place de Jaude.jpg",
+              "images/bg/DSCF0126.JPG"
                     ],
 			   "defaut" : [ "images/bg/radio-urbex.jpg" ] };
