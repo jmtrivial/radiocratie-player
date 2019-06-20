@@ -38,6 +38,7 @@ function preparePopup() {
       $( "#dialog" ).dialog( "open" );
     });
 
+  if ($("#news").length !== 0)
   $("#news").dialog({
 	autoOpen: true,
       show: {
@@ -144,10 +145,11 @@ function loadInfos() {
 		dataType: 'jsonp',
 		success: function(data){
 			currenttime = Date.parse(data.schedulerTime);
-			
+		        console.log(data.next);	
 			var shift = data.timezoneOffset * 1000;
 			nexttracktime = Date.parse(data.next.starts) + shift; 
-			nextshowtime = Date.parse(data.nextShow[0].starts);
+			if (data.nextShow)
+				nextshowtime = Date.parse(data.nextShow[0].starts);
 
 
       if (window.previoustrack && data.previous.name != window.previoustrack) {
