@@ -47,10 +47,10 @@
       <!-- div id="news" title"Actualités">
 	<p>Rendez-vous à 21h le 14 novembre à l'ours bar</p>
       </div--> 
-      <div id="side-note-button">
+      <div id="side-note-button" class="visible hidden">
         <button title="Informations">+</button>
       </div>
-      <div id="side-note">
+      <div id="side-note" class="visible">
         <div>
           <h2>Note d'intention des programmatrices</h2>
           <p>La programmation musicale de <strong>Radiocratie</strong> se veut à l'image de ce que nous écoutons&nbsp;: 
@@ -76,6 +76,12 @@
       <p id="contact"><a href="mailto:contact@radiocratie.com" title="nous écrire"><img src="images/email.svg" alt="Email" style="width: 1.5em; vertical-align: middle" /></a></p>
     </div>
 	</body>
+	
+	<script>
+    $('#side-note').removeClass("visible");
+    $('#side-note').removeClass("hidden");
+    $('#side-note-button').removeClass("visible");
+	</script>
 
 </html>
 

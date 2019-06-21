@@ -392,6 +392,8 @@ h1 {
     margin-right: 0;
  }
  
+
+ 
  #side-note-button button {
 	font-size: 100%;
 	background: none;
@@ -423,6 +425,10 @@ h1 {
     transition: right 0.25s;
     padding: 0 0.5em;
   }
+  
+   #side-note-button.hidden {
+  display: none;
+ }
   
 @media screen and (max-width : 1280px) {
       #side-note {

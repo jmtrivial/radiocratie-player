@@ -1,5 +1,4 @@
 
-
 function updatePageTitle() {
   msg = "Radiocratie";
   if (window.playStatus) {
