@@ -1,7 +1,7 @@
 
 function updatePageTitle() {
   msg = "Radiocratie";
-  if (window.playStatus) {
+  if (window.playStatus && window.currenttrack) {
       msg = window.currenttrack.replace("&amp;", "&").replace("&quot;", "\"") + " ♪ " + msg + " 📾";
   }
   else {
@@ -138,13 +138,11 @@ function updateTitle() {
 
 
 function loadInfos() {
-	console.log("on charge les infos");
 	$.ajax({
 		url: 'http://admin.radiocratie.com/api/live-info?type=show_content',
 		dataType: 'jsonp',
 		success: function(data){
 			currenttime = Date.parse(data.schedulerTime);
-		        console.log(data.next);	
 			var shift = data.timezoneOffset * 1000;
 			nexttracktime = Date.parse(data.next.starts) + shift; 
 			if (data.nextShow)
@@ -174,8 +172,9 @@ function loadInfos() {
 			setTimeout("loadInfos()", nexttracktime - currenttime);
 			
 			if (window.nextShow != nextshowtime) {
+        if (window.nextShow != -1)
+          updateBackground();
 				window.nextShow = nextshowtime;
-				updateBackground();
 				console.log("timeout: " + (nextshowtime - currenttime));
 				setTimeout("loadInfos()", nextshowtime - currenttime);
 			}
