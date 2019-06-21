@@ -53,6 +53,9 @@
   body {
     font-size:30px;
   }
+  #side-note {
+    font-size: 15px;
+  }
 }
 
 @media screen and (max-width : 500px)
@@ -452,12 +455,12 @@ h1 {
 
 @media screen and (max-width : 1024px) {
       #side-note {
-      width: 90%;
-      margin-right: -90%;
+      width: 70%;
+      margin-right: -70%;
   }
   
   #side-note-button.visible {
-    right: 90%;
+    right: 70%;
   }
 }
 
