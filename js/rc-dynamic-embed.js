@@ -1,14 +1,4 @@
 
-function updatePageTitle() {
-  msg = "Ruse48";
-  if (window.playStatus && window.currenttrack) {
-      msg = window.currenttrack.replace("&amp;", "&").replace("&quot;", "\"") + " ♪ " + msg + " 📾";
-  }
-  else {
-      msg = "📾 " + msg;
-  }
-  window.document.title = msg;
-}
 
 function simplifyDateTime(datetime) {
     time = datetime.split(" ")[1];
@@ -33,25 +23,6 @@ function cleanName(showname) {
 }
 
 
-function updateTitle() {
-  /** le titre affiché */
-	$(".jp-title").html("<p>" + window.currenttrack + "</p>");
-	$(".jp-title").tooltip({destroy: true});
-  
-  /** les titres du popup */
-  content = "<table><tr><th>Début</th><th>Fin</th><th>Titre - Artiste</th></tr>";
-  if (window.currenttrack) {
-      content += "<tr class=\"encours\"><td>" + window.currenttrackstarts + "</td><td>" + window.currenttrackends + "</td><td>" + window.currenttrack + "</td></tr>";    
-  }
-  if (window.previoustrack) {
-      content += "<tr class=\"prev\"><td>" + window.previoustrackstarts + "</td><td>" + window.previoustrackends + "</td><td>" + window.previoustrack + "</td></tr>";    
-  }
-  if (window.previoustrack2) {
-      content += "<tr class=\"prev2\"><td>" + window.previoustrack2starts + "</td><td>" + window.previoustrack2ends + "</td><td>" + window.previoustrack2 + "</td></tr>";    
-  }
-  content += "</table>";
-  $("#dialog").html(content);
-}
 
 function updateRuse() {
         sruse = Array("Souhaitable",
@@ -90,81 +61,8 @@ function updateRuse() {
 
 }
 
-function loadInfos() {
-	$.ajax({
-		url: 'http://admin.radiocratie.com/api/live-info?type=show_content',
-		dataType: 'jsonp',
-		success: function(data){
-			currenttime = Date.parse(data.schedulerTime);
-			var shift = data.timezoneOffset * 1000;
-			nexttracktime = Date.parse(data.next.starts) + shift; 
-			if (data.nextShow)
-				nextshowtime = Date.parse(data.nextShow[0].starts);
 
 
-      if (window.previoustrack && data.previous.name != window.previoustrack) {
-        window.previoustrack2 = window.previoustrack;
-        window.previoustrack2starts = window.previoustrackstarts;
-        window.previoustrack2ends = window.previoustrackends;
-      }
-      
-      window.previoustrack = data.previous.name;
-      window.previoustrackstarts = simplifyDateTime(data.previous.starts);
-      window.previoustrackends = simplifyDateTime(data.previous.ends);
-      
-			window.currenttrack = data.current.name;
-      window.currenttrackstarts = simplifyDateTime(data.current.starts);
-      window.currenttrackends = simplifyDateTime(data.current.ends);
-      
-			window.currentshow = data.currentShow[0].name;
-			window.endofcurrenttrack = Date.now() + (nexttracktime - currenttime);
-
-			updateTitle();
-      updatePageTitle();
-			
-			setTimeout("loadInfos()", nexttracktime - currenttime);
-			
-			if (window.nextShow != nextshowtime) {
-        if (window.nextShow != -1)
-          updateBackground();
-				window.nextShow = nextshowtime;
-				console.log("timeout: " + (nextshowtime - currenttime));
-				setTimeout("loadInfos()", nextshowtime - currenttime);
-			}
-			
-		}
-	});
-	
-}
-
-function updateTimeEndOfTrack() {
-	if(window.endofcurrenttrack != null && window.endofcurrenttrack >= 0) {
-		remainTime = "";
-		time = new Date(window.endofcurrenttrack - Date.now() - (3600000)); // 1er sept à 1h
-		if (time.getUTCMilliseconds() <= 0)
-			msg = "titre en cours";
-		else {
-			hours = time.getHours();
-			if (hours != 0)
-				remainTime = remainTime + hours + "h";
-			mins = time.getMinutes();
-			if (mins != 0)
-				if (mins >= 10)
-					remainTime = remainTime + mins + "mn";
-				else
-					remainTime = remainTime + "0" + mins + "mn";
-			secs = time.getSeconds();
-			if (secs != 0)
-				if (secs >= 10)
-					remainTime = remainTime + secs + "s";
-				else
-					remainTime = remainTime + "0" + secs + "s";
-			msg = "titre en cours (reste " + remainTime + ")";	
-		 }
-		if ($(".jp-title").data("tooltip"))
-			$(".jp-title").tooltip({content : msg, show : {delay: 400}});
-	}
-}
 
 window.mobilecheck = function() {
   var check = false;
@@ -182,12 +80,10 @@ $(document).ready(function(){
 	
 	window.currentshow = null;
 	window.nextShow = -1;
-	loadInfos();
 	
     
     setInterval("updateRuse()", 1000 * 60 * 3); // mise à jour toutes les n minutes
 	
-	setInterval("updateTimeEndOfTrack()", 1000);
 	
 	
    }

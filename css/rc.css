@@ -281,7 +281,7 @@ h1 img {
 
 /* contrôle du bitrate */
 #hd-selector {
-	margin-top: -3.4em;
+	margin-top: -6em;
 	margin-bottom: 3.4em;
 	text-align: right;
 }
@@ -368,7 +368,7 @@ h1 img {
 #soustitre {
     padding: 0;
     width: 35em;
-    margin-top: -2em;
+    margin-top: 2em;
     margin-bottom: 1em;
 }
 #soustitre p {
@@ -559,7 +559,7 @@ h1 img {
 }
 #embed #soustitre {
     clear: both;
-    width: 100%;
+    width: auto;
     padding: .5em;
     text-align: left;
     color: #aaa;
