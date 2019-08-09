@@ -361,6 +361,15 @@ h1 {
 		margin: 0;
 }
 
+#soustitre {
+    padding: 0;
+    width: 35em;
+    margin-top: -2em;
+    margin-bottom: 1em;
+}
+#soustitre p {
+    margin: 0;
+}
 
  /** pour les tooltips */
  

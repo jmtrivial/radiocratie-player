@@ -1,6 +1,6 @@
 
 function updatePageTitle() {
-  msg = "Radiocratie";
+  msg = "Ruse48";
   if (window.playStatus) {
 	msg = window.currenttrack.replace("&amp;", "&").replace("&quot;", "\"") + " ♪ " + msg + " 📾";
   }
@@ -111,7 +111,7 @@ $(document).ready(function(){
 	
   $(window).bind("beforeunload",function(event) {
     if (window.playStatus)
-          return "Vous écoutez Radiocratie. En fermant la page, vous coupez le robinet à musique. Êtes-vous sûr·e ?";
+          return "Vous écoutez Ruse48. En fermant la page, vous coupez le robinet à musique. Êtes-vous sûr·e ?";
   });
 
 	
@@ -161,4 +161,5 @@ $(document).ready(function(){
 				$("#jquery_jplayer").jPlayer("pause");	
 	};
 });
+
 

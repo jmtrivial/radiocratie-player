@@ -1,6 +1,6 @@
 
 function updatePageTitle() {
-  msg = "Radiocratie";
+  msg = "Ruse48";
   if (window.playStatus && window.currenttrack) {
       msg = window.currenttrack.replace("&amp;", "&").replace("&quot;", "\"") + " ♪ " + msg + " 📾";
   }

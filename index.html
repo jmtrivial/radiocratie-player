@@ -2,7 +2,7 @@
 <html lang="fr">
 	<head>
 		<meta charset='utf-8'>
-		<title>📾 Radiocratie</title>
+		<title>Ruse48</title>
 		<link rel="stylesheet" media="screen" href="css/rcCheckbox.css" />
 		<link rel="stylesheet" href="css/jquery-ui.css">
 		<link rel="stylesheet" media="screen" href="css/rc.css" />
@@ -13,17 +13,18 @@
 		<script src="js/rc-player.js"></script>
 		<script src="js/rc-dynamic.js"></script>
 		<script src="js/rcCheckbox.js"></script>
-		<link rel="image_src" type="image/jpeg" href="http://radicratie.com/images/illustration.jpg" />
-		<meta property="og:image" content="http://radicratie.com/images/illustration.jpg" />
-		<meta name="Description" content="Radiocratie, une webradio pour les contrôler toutes" />
+		<link rel="image_src" type="image/jpeg" href="http://ruse48.radicratie.com/images/illustration.jpg" />
+		<meta property="og:image" content="http://ruse48.radicratie.com/images/illustration.jpg" />
+		<meta name="Description" content="Ruse48, 48 heures de vendredi 23 à dimanche 25 août 20 heures, à l'issue de Utopie Sonore 2019, résidence ouverte de création sonore." />
 	</head>
 	<body>
     <div id="container">
       <div id="background"></div>
       <div id="main">
         <img src="images/illustration.jpg" alt="Illustration" style="display: none" />
-        <h1 title="Une webradio pour les contrôler toutes">Radiocratie</h1>
+        <h1 title="48 heures de vendredi 23 à dimanche 25 août 20 heures, à l'issue de Utopie Sonore 2019, résidence ouverte de création sonore.">Ruse48</h1>
         <div id="hd-selector"><span class="hd">HD</span> <input type="checkbox" id="rc-checkbox" /></div>
+        <div id="soustitre"><p>Ruse48, Radio Utopique, <span class="s-de-ruse">Sentimentale</span> et Éphémère de 48 heures de vendredi 23 à dimanche 25 août 20 heures, à l'issue de <a href="http://www.utopiesonore.com/">Utopie Sonore 2019</a>, résidence ouverte de création sonore.</p></div>
         <div id="jquery_jplayer"></div>
         <div id="nojs">Le lecteur intégré de notre webradio nécessite l'activation du javascript. Si vous ne souhaitez pas activer javascript, vous pouvez également écouter directement le flux, en qualité <a href="http://flux.radiocratie.com/flux">192 kbps</a>, ou en qualité <a href="http://flux.radiocratie.com/flux-128">128 kbps</a>.</div>
         <div id="jp_container">
@@ -32,14 +33,14 @@
             <button class="jp-pause" title="pause [espace]">pause</button>
           </div>	
           <div class="jp-title" title="titre en cours"></div>
-          <div class="jp-volume-controls">
+          <!-- div class="jp-volume-controls">
                   <button class="jp-mute" tabindex="0" title="muet">muet</button>
                   <button class="jp-unmute" tabindex="0" title="écouter">écouter</button>
                   <button class="jp-volume-max" tabindex="1" title="plein volume">plein volume</button>
                   <div class="jp-volume-bar" title="ajuster le volume">
                     <div class="jp-volume-bar-value"></div>
                   </div>
-          </div>
+          </div-->
         </div>
       </div>
       <div id="dialog" title="Titres passés">
@@ -52,28 +53,15 @@
       </div>
       <div id="side-note" class="visible">
         <div>
-          <h2>Note d'intention des programmatrices</h2>
-          <p>La programmation musicale de <strong>Radiocratie</strong> se veut à l'image de ce que nous écoutons&nbsp;: 
-		 entre 
-          les douceurs des titres qui ne peuvent pas être oubliés, les pièces posées là pour surprendre, et les sons qui dérangent...
-          </p>
-          <p>
-            Sauf émission spéciale, la journée sur <strong>Radiocratie</strong> commence à 8h, par une programmation musicale que même Claire et
-            Sylvain Blanchard apprécient. À 18h, Claire et Sylvain se préparent pour une petite soirée festive. Au programme&nbsp;: de la musique pour les mettre
-            en transe&nbsp;! Mais passé 2h du mat', chut, Claire et Sylvain dorment. Ne leur parlez pas de ce qui passe sur Radiocratie&nbsp;!
-          </p>
-	  <img src="images/creneaux.svg" alt="Creneaux" style="width: 100%" />
-          <p>Les sons ne sont pas choisis en fonction de leur style musical, mais plutôt par énergie&nbsp;: tranquille, normal, énervé... 
-          Sauf si on s'est lourdement trompées, les oreilles de Claire et Sylvain Blanchard naviguent au fil de nos humeurs, progressivement entre toutes les ambiances du spectre.</p>
-          <h2>Tu veux participer&nbsp;?</h2>
-          <p>Pour l'instant, l'équipe de <strong>Radiocratie</strong> trouve sa vitesse de croisière. Mais si tu as des pièces
-          à lui proposer, n'hésite pas <a href="mailto:contact@radiocratie.com" title="nous écrire">à lui écrire</a>.</p>
-          <h2>Tu t'ennuies&nbsp;?</h2>
-          <p>Si tu t'ennuies en écoutant Radiocratie, va jeter une oreille à <a href="http://fieldmice.free.fr/Line_In.pls">Radio Mulot</a>, aka France Museau. Nous, on aime&nbsp;! Et puis reviens ici après...</p>
+		<img src="images/ruse48-logo-noir.png" alt="Ruse48" style="width: 100%" />
+		<p>Ruse48, Radio Utopique, <span class="s-de-ruse">Sentimentale</span> et Éphémère de 48 heures de vendredi 23 à dimanche 25 août 20 heures, à l'issue de <a href="http://www.utopiesonore.com/">Utopie Sonore 2019</a>, résidence ouverte de création sonore.</p>
+		
+		<p>... et quand on n'écoute pas Ruse48, le flux rediffuse le son de <a href="http://radiocratie.com">Radiocratie</a>.</p>
         </div>
+        
       </div>
       <p id="note"><a title="À écouter aussi dans votre lecteur en 192kbps, pour les bonnes connexions internet." href="http://flux.radiocratie.com/flux"><img src="images/streaming.svg" alt="Streaming" style="width: 1.5em; vertical-align: middle" /> 192k</a> <a title="À écouter aussi dans votre lecteur en 128kbps, pour les connexions internet un peu lentes" href="http://flux.radiocratie.com/flux-128"><img src="images/streaming.svg" alt="Streaming" style="width: 1.5em; vertical-align: middle" /> 128k</a></p>
-      <p id="contact"><a href="mailto:contact@radiocratie.com" title="nous écrire"><img src="images/email.svg" alt="Email" style="width: 1.5em; vertical-align: middle" /></a></p>
+      <p id="contact"><a href="mailto:contact@utopiesonore.com" title="nous écrire"><img src="images/email.svg" alt="Email" style="width: 1.5em; vertical-align: middle" /></a></p>
     </div>
     	<script>
         $('#side-note').removeClass("visible");
