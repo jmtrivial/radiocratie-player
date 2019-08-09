@@ -135,7 +135,42 @@ function updateTitle() {
   $("#dialog").html(content);
 }
 
+function updateRuse() {
+        sruse = Array("Souhaitable",
+            "Surexcitée",
+            "Sous-entendue",
+            "Sous-tendue ",
+            "Soudaine ",
+            "Sèche",
+            "Saboteuse",
+            "Sphinctérienne ",
+            "Saturée",
+            "Sympathique",
+            "Symptomatique",
+            "Stérile",
+            "Sporadique",
+            "Sensuelle",
+            "Satisfaisante",
+            "Stratosphérique",
+            "Sure",
+            "Soporifique",
+            "Sentimentale",
+            "Salée",
+            "Sophiste",
+            "Siphonnée",
+            "Sirotée",
+            "Sanglante",
+            "Suprême salope ",
+            "Simiesque",
+            "Sismique",
+            "Sourde",
+            "Soufflante",
+            "Surélevée",
+            "Sifflante",
+            "Super ");
+        $(".s-de-ruse").html(sruse[Math.floor(Math.random()*sruse.length)]);
 
+}
 
 function loadInfos() {
 	$.ajax({
@@ -234,6 +269,8 @@ $(document).ready(function(){
 	
 	bgUpdateDelay = 5;
 	setInterval("updateBackground()", 1000 * 60 * bgUpdateDelay); // mise à jour toutes les n minutes
+    
+    setInterval("updateRuse()", 1000 * 60 * 3); // mise à jour toutes les n minutes
 	
 	setInterval("updateTimeEndOfTrack()", 1000);
 	
