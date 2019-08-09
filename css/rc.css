@@ -51,7 +51,7 @@
 @media screen and (max-width : 1024px)
 {
   body {
-    font-size:30px;
+    font-size:20px;
   }
   #side-note {
     font-size: 15px;
@@ -160,6 +160,10 @@ h1 {
 	padding: 0;
 	display: inline-block;
 	cursor: default;
+}
+
+h1 img {
+        width: 6em;
 }
 
 #note, #contact {
@@ -371,6 +375,13 @@ h1 {
     margin: 0;
 }
 
+
+@media screen and (max-width : 1024px) {
+#soustitre {
+    width: 25em;
+}    
+}
+
  /** pour les tooltips */
  
  .ui-tooltip {
@@ -510,4 +521,94 @@ h1 {
 }
 .prev2 {
     color: #aaa;
+}
+
+/*** chat ***/
+
+#chat {
+    width: 40em;
+    height: 20em;
+}
+#chat iframe {
+    border: 0;
+    height: 100%;
+    width: 100%;
+}
+
+
+/** version embarquée */
+#embed body {
+    font-size:16px;
+  }
+
+
+#embed h1 {
+    font-size: 1.5em;
+    float: left;
+}
+
+#embed #main {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+#embed #hd-selector {
+    margin: .5em;
+    
+}
+#embed #soustitre {
+    clear: both;
+    width: 100%;
+    padding: .5em;
+    text-align: left;
+    color: #aaa;
+}
+#embed #jp_container {
+    width: 6em;
+    height: 4em;
+    float: left;
+    margin-top: -1em;
+}
+#embed .jp-controls {
+    margin: 0;
+    width: 2em;
+}
+#embed .jp-title {
+    clear: both;
+    height: 1.2em;
+}
+ 
+#embed .jp-title p {
+    float: left;
+}
+
+ 
+@media screen and (max-width : 256px) {
+    #embed body {
+    font-size:12px;
+  }
+}
+
+@media screen and (max-width : 235px) {
+  #embed #soustitre {
+    padding-top: 5em;
+    clear: both;
+  }
+}
+
+@media screen and (max-width : 512px) {
+    #embed body {
+    font-size:14px;
+  }
+
+#embed .jp-title {
+    position: absolute;
+    left: 0;
+    margin-top: 2.5em;
+    margin-left: .5em;
+    clear: both;
+    height: 1.2em;
+}
+    
 }
