@@ -21,7 +21,6 @@
                 padding: 0;
                 margin: 0;
                 width: 100%;
-                height: 95vh;
             }
             div {
                 float: left;
@@ -29,15 +28,29 @@
                 display: block;
             }
             #cr-player {
+                text-align: center;
                 width: 30%;
             }
             #cr-chat {
                 width: 70%;
             }
+            #cr-player img {
+                margin-top: 1em;
+            }
+            #cr-player iframe {
+                height: 230px;
+            }
+            #cr-chat iframe {
+                height: 95vh;
+            }
 		</style>
 	</head>
 	<body>
-    <div id="cr-player"><iframe src="https://ruse48.radiocratie.com/embed.html"></iframe></div>
+    <div id="cr-player">
+        <iframe src="https://ruse48.radiocratie.com/embed.html"></iframe>
+
+        <img src="images/catyellsWhite800.png" alt="chatroom" style="width: 70%" />
+     </div>
     
     <div id="cr-chat"><iframe src="https://ruse48.radiocratie.com/chat/"></iframe></div>
 	</body>
