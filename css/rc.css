@@ -612,3 +612,11 @@ h1 img {
 }
     
 }
+
+.bouton {
+ opacity: 0.9;   
+}
+
+.bouton:hover {
+    opacity: 1.0;
+}
