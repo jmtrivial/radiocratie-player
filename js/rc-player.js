@@ -1,4 +1,8 @@
 
+var url = "";
+if ($("html").is("#embed"))
+    url = "embed.html";
+
 function updatePageTitle() {
   msg = "Radiocratie";
   if (window.playStatus) {
@@ -14,9 +18,9 @@ function updateUrl(playing) {
 	window.localupdate = true;
 	if (window.bitrate != null) {
 		if (playing)
-			window.location = "/#p" + window.bitrate;
+			window.location = "/" + url + "#p" + window.bitrate;
 		else
-			window.location = "/#" + window.bitrate;
+			window.location = "/" + url + "#" + window.bitrate;
 	}
 }
 
@@ -34,9 +38,9 @@ function selectBitrate(value, log = true) {
 	
 	if (log) {
 		if (window.playStatus)
-			window.history.pushState(null, document.title + " " + value, "/#p" + value);
+			window.history.pushState(null, document.title + " " + value, "/" + url + "#p" + value);
 		else
-			window.history.pushState(null, document.title + " " + value, "/#" + value);
+			window.history.pushState(null, document.title + " " + value, "/" + url + "#" + value);
 	}
 	
 	if (window.playStatus) {

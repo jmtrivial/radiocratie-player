@@ -1,4 +1,9 @@
 
+
+var url = "";
+if ($("html").is("#embed"))
+    url = "embed.html";
+
 function updatePageTitle() {
   msg = "Radiocratie";
   if (window.playStatus && window.currenttrack) {
@@ -222,8 +227,9 @@ window.mobilecheck = function() {
 $(document).ready(function(){
 	
   
-  
-  preparePopup();
+  if (url != "embed.html") {
+    preparePopup();
+  }
   if (!window.mobilecheck()) {
     $( document ).tooltip({ show: {delay: 700}});
   }
@@ -232,30 +238,33 @@ $(document).ready(function(){
 	window.nextShow = -1;
 	loadInfos();
 	
-	bgUpdateDelay = 5;
-	setInterval("updateBackground()", 1000 * 60 * bgUpdateDelay); // mise à jour toutes les n minutes
+    if (url != "embed.html") {
+        bgUpdateDelay = 5;
+        setInterval("updateBackground()", 1000 * 60 * bgUpdateDelay); // mise à jour toutes les n minutes
+    }
 	
 	setInterval("updateTimeEndOfTrack()", 1000);
 	
-	$(".jp-title").on("tooltipopen", function(event, ui) {
-		$(this).data("tooltip", true);
-		updateTimeEndOfTrack();
-	});
-	$(".jp-title").on("tooltipclose", function(event, ui) {
-		$(this).data("tooltip", false);
-	});
-  $('#side-note-button').click(function() {
-    $('#side-note').toggleClass("visible");
-    $('#side-note-button').toggleClass("visible");
-    if ($('#side-note').hasClass("visible")) {
-      $('#side-note-button button').text("-");
-    }
-    else {
-      $('#side-note-button button').text("+");
+    if (url != "embed.html") {
+        $(".jp-title").on("tooltipopen", function(event, ui) {
+            $(this).data("tooltip", true);
+            updateTimeEndOfTrack();
+        });
+        $(".jp-title").on("tooltipclose", function(event, ui) {
+            $(this).data("tooltip", false);
+        });
+    $('#side-note-button').click(function() {
+        $('#side-note').toggleClass("visible");
+        $('#side-note-button').toggleClass("visible");
+        if ($('#side-note').hasClass("visible")) {
+        $('#side-note-button button').text("-");
+        }
+        else {
+        $('#side-note-button button').text("+");
+        }
+        });
     }
 
-  });
-	
    }
    
 );
