@@ -1,4 +1,7 @@
 
+var url = "";
+if ($("html").is("#embed"))
+    url = "embed.html";
 
 function simplifyDateTime(datetime) {
     time = datetime.split(" ")[1];
@@ -118,24 +121,28 @@ $(document).ready(function(){
 	window.currentshow = null;
 	window.nextShow = -1;
 	
-	bgUpdateDelay = 5;
-	setInterval("updateBackground()", 1000 * 60 * bgUpdateDelay); // mise à jour toutes les n minutes
+    if (url != "embed.html") {
+        bgUpdateDelay = 5;
+        setInterval("updateBackground()", 1000 * 60 * bgUpdateDelay); // mise à jour toutes les n minutes
+    }
     
     setInterval("updateRuse()", 1000 * 60 * 3); // mise à jour toutes les n minutes
 	
 	
 
-  $('#side-note-button').click(function() {
-    $('#side-note').toggleClass("visible");
-    $('#side-note-button').toggleClass("visible");
-    if ($('#side-note').hasClass("visible")) {
-      $('#side-note-button button').text("-");
-    }
-    else {
-      $('#side-note-button button').text("+");
-    }
+    if (url != "embed.html") {
+        $('#side-note-button').click(function() {
+            $('#side-note').toggleClass("visible");
+            $('#side-note-button').toggleClass("visible");
+            if ($('#side-note').hasClass("visible")) {
+            $('#side-note-button button').text("-");
+            }
+            else {
+            $('#side-note-button button').text("+");
+            }
 
-  });
+        });
+    }
 	
    }
    

@@ -1,4 +1,9 @@
 
+var url = "";
+if ($("html").is("#embed"))
+    url = "embed.html";
+
+
 function updatePageTitle() {
   msg = "Ruse48";
   if (window.playStatus) {
@@ -14,29 +19,29 @@ function updateUrl(playing) {
 	window.localupdate = true;
 	if (window.bitrate != null) {
 		if (playing)
-			window.location = "/#p" + window.bitrate;
+			window.location = "/" + url + "#p" + window.bitrate;
 		else
-			window.location = "/#" + window.bitrate;
+			window.location = "/" + url + "#" + window.bitrate;
 	}
 }
 
 function selectBitrate(value, log = true) {
 	window.bitrate = value;
 	if (value == 128) {
-		window.selectedFlux = "http://flux.radiocratie.com/flux-128";
+		window.selectedFlux = "https://flux.radiocratie.com/flux-128";
 		$('span.hd').removeClass("active");
 	}
 	else /*if (value == 192) */ {
 		value = 192;
-		window.selectedFlux = "http://flux.radiocratie.com/flux";
+		window.selectedFlux = "https://flux.radiocratie.com/flux";
 		$('span.hd').addClass("active");
 	}
 	
 	if (log) {
 		if (window.playStatus)
-			window.history.pushState(null, document.title + " " + value, "/#p" + value);
+			window.history.pushState(null, document.title + " " + value, "/" + url + "#p" + value);
 		else
-			window.history.pushState(null, document.title + " " + value, "/#" + value);
+			window.history.pushState(null, document.title + " " + value, "/" + url + "#" + value);
 	}
 	
 	if (window.playStatus) {
