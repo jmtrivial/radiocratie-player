@@ -144,7 +144,7 @@ function updateTitle() {
 
 function loadInfos() {
 	$.ajax({
-		url: 'http://admin.radiocratie.com/api/live-info?type=show_content',
+		url: 'https://admin.radiocratie.com/api/live-info?type=show_content',
 		dataType: 'jsonp',
 		success: function(data){
 			currenttime = Date.parse(data.schedulerTime);

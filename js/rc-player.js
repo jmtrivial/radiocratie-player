@@ -27,12 +27,12 @@ function updateUrl(playing) {
 function selectBitrate(value, log = true) {
 	window.bitrate = value;
 	if (value == 128) {
-		window.selectedFlux = "http://flux.radiocratie.com/flux-128";
+		window.selectedFlux = "https://flux.radiocratie.com/flux-128";
 		$('span.hd').removeClass("active");
 	}
 	else /*if (value == 192) */ {
 		value = 192;
-		window.selectedFlux = "http://flux.radiocratie.com/flux";
+		window.selectedFlux = "https://flux.radiocratie.com/flux";
 		$('span.hd').addClass("active");
 	}
 	
