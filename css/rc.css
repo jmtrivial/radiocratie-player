@@ -51,7 +51,7 @@
 @media screen and (max-width : 1024px)
 {
   body {
-    font-size:20px;
+    font-size:17px;
   }
   #side-note {
     font-size: 15px;
@@ -163,7 +163,7 @@ h1 {
 }
 
 h1 img {
-        width: 6em;
+        width: 4em;
 }
 
 #note, #contact {
@@ -615,6 +615,7 @@ h1 img {
 
 .bouton {
  opacity: 0.9;   
+ width: 10em; 
 }
 
 .bouton:hover {
