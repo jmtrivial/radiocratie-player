@@ -1,4 +1,20 @@
-var images = { "nuit" : [ "images/bg/mix-chant.jpg", "images/bg/k7s.jpg", "images/bg/mixer.jpg",
+var images = { 
+    
+                    "ruse48" : ["images/bg/21054921_1585826328115708_1936933700740186281_o.jpg",
+                            "images/bg/21055118_1585829398115401_7443525437990799614_o.jpg",
+                            "images/bg/21056198_1585829788115362_8384074489932678166_o.jpg",
+                            "images/bg/atelier-musique-concrete.jpg",
+                            "images/bg/bibliotheque2.jpg",
+                            "images/bg/bibliotheque.jpg",
+                            "images/bg/chai faire chai dire.jpg",
+                            "images/bg/lumieres.jpg",
+                            "images/bg/photo Emetteur FM simple.jpg",
+                            "images/bg/piezzo-2.jpg",
+                            "images/bg/us17.png",
+                            "images/bg/us-18-2.jpg",
+                            "images/bg/us-18.jpg"
+                            ],
+    "nuit" : [ "images/bg/mix-chant.jpg", "images/bg/k7s.jpg", "images/bg/mixer.jpg",
   "images/bg/DSC03980.jpg",
   "images/bg/DSC04223.jpg",
   "images/bg/DSC04538.jpg",
@@ -39,4 +55,5 @@ var images = { "nuit" : [ "images/bg/mix-chant.jpg", "images/bg/k7s.jpg", "image
               "images/bg/Place de Jaude.jpg",
               "images/bg/DSCF0126.JPG"
                     ],
+
 			   "defaut" : [ "images/bg/radio-urbex.jpg" ] };
