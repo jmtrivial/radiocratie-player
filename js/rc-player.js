@@ -26,15 +26,15 @@ function updateUrl(playing) {
 
 function selectBitrate(value, log = true) {
 	window.bitrate = value;
-	if (value == 128) {
+	/*if (value == 128) {
 		window.selectedFlux = "https://flux.radiocratie.com/flux-128";
 		$('span.hd').removeClass("active");
-	}
-	else /*if (value == 192) */ {
+	}*/
+	//else /*if (value == 192) */ {
 		value = 192;
 		window.selectedFlux = "https://flux.radiocratie.com/flux";
-		$('span.hd').addClass("active");
-	}
+		//$('span.hd').addClass("active");
+	//}
 	
 	if (log) {
 		if (window.playStatus)
@@ -71,14 +71,14 @@ $(document).ready(function(){
 			$(this).jPlayer("setMedia", {
 					mp3: window.selectedFlux });
 			
-			if (window.location.hash == "#128" || window.location.hash == "#p128" ) {
+			/*if (window.location.hash == "#128" || window.location.hash == "#p128" ) {
 				selectBitrate(128);
 				$('#rc-checkbox').prop('checked', false);
 			}
-			else {
+			else {*/
 				selectBitrate(192);
-				$('#rc-checkbox').prop('checked', true);
-			}
+				//$('#rc-checkbox').prop('checked', true);
+			//}
 			$("#rc-checkbox").rcCheckbox();
 		},
 		play: function() {
@@ -120,28 +120,28 @@ $(document).ready(function(){
 
 	
 
-	$("#rc-checkbox").change(function(){
+	/*$("#rc-checkbox").change(function(){
 		if($("#rc-checkbox").next().hasClass('checked')){
 			selectBitrate(192);
 		} else {
 			selectBitrate(128);
 		}
-	});
+	});*/
 	
 	window.addEventListener("popstate", function() {
 	  if (window.localupdate) {
 		  window.localupdate = false;
 	  }
 	  else {
-		if(location.hash === "#128" || location.hash === "#p128") {
+		/*if(location.hash === "#128" || location.hash === "#p128") {
 			selectBitrate(128, false);
 			$('.rc-ui-select').removeClass('checked');
 		}
-		else {
+		else {*/
 			selectBitrate(192, false);
-			$('.rc-ui-select').addClass('checked');
+			//$('.rc-ui-select').addClass('checked');
 
-		}
+		//}
 	  }
     }, false);
 
