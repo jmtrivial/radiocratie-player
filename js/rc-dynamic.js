@@ -147,10 +147,11 @@ function loadInfos() {
 		url: 'https://admin.radiocratie.com/api/live-info?type=show_content',
 		dataType: 'jsonp',
 		success: function(data){
+			console.log(JSON.stringify(data));
 			currenttime = Date.parse(data.schedulerTime);
 			var shift = data.timezoneOffset * 1000;
 			nexttracktime = Date.parse(data.next.starts) + shift; 
-			if (data.nextShow)
+			if (data.nextShow && data.nextShow.length > 0)
 				nextshowtime = Date.parse(data.nextShow[0].starts);
 
 
