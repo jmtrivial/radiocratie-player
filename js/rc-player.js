@@ -60,9 +60,9 @@ $(document).ready(function(){
 	window.playStatus = false;
 	window.localupdate = false;
 
-	if (window.location.hash == "#p128" || window.location.hash == "#p192" ) {
+	/*if (window.location.hash == "#p128" || window.location.hash == "#p192" ) {
 		window.playStatus = true;
-	}
+	}*/
 	
 	// Instance jPlayer
 	$("#jquery_jplayer").jPlayer({
@@ -110,7 +110,7 @@ $(document).ready(function(){
 			unmute: ".jp-unmute"
 		},
 		autoBlur: false,
-		keyEnabled: true
+		keyEnabled: false
 	});
 	
   $(window).bind("beforeunload",function(event) {
@@ -159,8 +159,10 @@ $(document).ready(function(){
         }
 	switch (keyCode) { 
 		case 32:
-			if (!window.playStatus)
+			if (!window.playStatus) {
+                $("#jquery_jplayer").jPlayer("setMedia", {mp3: window.selectedFlux} );
 				$("#jquery_jplayer").jPlayer("play");
+            }
 			else
 				$("#jquery_jplayer").jPlayer("pause");	
 	};
